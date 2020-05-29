@@ -4,47 +4,44 @@ import { shade } from 'polished';
 import signInBackgroundImage from '../../assets/sign-in-background.png';
 
 export const Container = styled.div`
-height: 100vh;
+  height: 100vh;
 
-display: flex;
-align-items: stretch;
+  display: flex;
+  align-items: stretch;
 `;
 
 export const Content = styled.div`
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
-width: 100%;
-max-width: 700px;
+  width: 100%;
+  max-width: 700px;
 
-form {
-  margin: 80px 0;
-  width: 340px;
-  text-align: center;
+  form {
+    margin: 80px 0;
+    width: 340px;
+    text-align: center;
 
-  h1 {
-    margin-bottom: 24px;
-  }
+    h1 {
+      margin-bottom: 24px;
+    }
 
+    a {
+      color: #f4ede8;
+      display: block;
+      margin-top: 24px;
+      text-decoration: none;
+      transition: color 0.2s;
 
-   a {
-    color: #F4EDE8;
-    display: block;
-    margin-top: 24px;
-    text-decoration: none;
-    transition: color 0.2s;
-
-    &:hover{
-      color: ${shade(0.45, '#F4EDE8')}
+      &:hover {
+        color: ${shade(0.45, '#F4EDE8')};
+      }
     }
   }
-
-
-}
   > a {
-    color: #FF9000;
+    color: #ff9000;
     display: block;
     margin-top: 24px;
     text-decoration: none;
@@ -54,8 +51,8 @@ form {
 
     transition: color 0.2s;
 
-    &:hover{
-      color: ${shade(0.3, '#FF9000')}
+    &:hover {
+      color: ${shade(0.3, '#FF9000')};
     }
 
     svg {
@@ -65,7 +62,7 @@ form {
 `;
 
 export const Background = styled.div`
-flex: 1;
-background: url(${signInBackgroundImage}) no-repeat center;
-background-size: cover;
+  flex: 1;
+  background: url(${signInBackgroundImage}) no-repeat center;
+  background-size: cover;
 `;

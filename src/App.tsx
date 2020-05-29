@@ -1,17 +1,18 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 
-import GlobalStyle from './style/global';
 import SignIn from './pages/SignIn';
-import SignUp from './pages/SignUp';
+// import SignUp from './pages/SignUp';
+import GlobalStyle from './style/global';
 
-const App: React.FC = () => {
-  return (
-    <>
-      {/* <SignIn/> */}
+import { AuthProvider } from './context/AuthContext';
+
+const App: React.FC = () => (
+  <>
+    <AuthProvider>
       <SignIn />
-      <GlobalStyle />
-    </>
-  );
-};
+    </AuthProvider>
 
+    <GlobalStyle />
+  </>
+);
 export default App;
