@@ -6,7 +6,8 @@ import { Form } from '@unform/web';
 
 import { FormHandles } from '@unform/core';
 
-import { useAuth } from '../../context/AuthContext';
+import { useAuth } from '../../hooks/auth';
+import { useToast } from '../../hooks/toast';
 
 import { Container, Content, Background } from './styles';
 import Input from '../../components/Input';
@@ -25,6 +26,7 @@ const SignIn: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
 
   const { signIn } = useAuth();
+  const { addToast, removeToast } = useToast();
 
   const handleSubmit = useCallback(
     async (data: SignInFormData) => {
@@ -40,7 +42,7 @@ const SignIn: React.FC = () => {
 
         await schema.validate(data, { abortEarly: false });
 
-        signIn({
+        await signIn({
           email: data.email,
           password: data.password,
         });
@@ -51,8 +53,10 @@ const SignIn: React.FC = () => {
 
         formRef.current?.setErrors(errors);
       }
+
+      addToast();
     },
-    [signIn],
+    [signIn, addToast],
   );
 
   return (
