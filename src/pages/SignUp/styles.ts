@@ -1,50 +1,70 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { shade } from 'polished';
 
 import signUpBackgroundImage from '../../assets/sign-up-background.png';
 
 export const Container = styled.div`
-height: 100vh;
+  height: 100vh;
 
-display: flex;
-align-items: stretch;
+  display: flex;
+  align-items: stretch;
 `;
 
 export const Content = styled.div`
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  place-content: center;
 
-width: 100%;
-max-width: 700px;
+  width: 100%;
+  max-width: 700px;
+`;
 
-form {
-  margin: 80px 0;
-  width: 340px;
+const appearFromRight = keyframes`
+  from{
+    opacity: 0;
+    transform: translateX(50px);
+  }
+
+  to{
+    opacity: 1;
+    transform: translateX(0px);
+  }
+`;
+
+export const AnimationContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
   text-align: center;
 
-  h1 {
-    margin-bottom: 24px;
-  }
+  animation: ${appearFromRight} 1s;
 
+  form {
+    margin: 80px 0;
+    width: 340px;
 
-   a {
-    color: #F4EDE8;
-    display: block;
-    margin-top: 24px;
-    text-decoration: none;
-    transition: color 0.2s;
+    h1 {
+      margin-bottom: 24px;
+    }
 
-    &:hover{
-      color: ${shade(0.45, '#F4EDE8')}
+    a {
+      color: #f4ede8;
+      display: block;
+      margin-top: 24px;
+      text-decoration: none;
+      transition: color 0.2s;
+
+      &:hover {
+        color: ${shade(0.45, '#F4EDE8')};
+      }
     }
   }
-
-
-}
   > a {
-    color: #F4EDE8;
+    color: #ff9000;
     display: block;
     margin-top: 24px;
     text-decoration: none;
@@ -54,8 +74,8 @@ form {
 
     transition: color 0.2s;
 
-    &:hover{
-      color: ${shade(0.3, '#F4EDE8')}
+    &:hover {
+      color: ${shade(0.3, '#FF9000')};
     }
 
     svg {
@@ -65,7 +85,7 @@ form {
 `;
 
 export const Background = styled.div`
-flex: 1;
-background: url(${signUpBackgroundImage}) no-repeat center;
-background-size: cover;
+  flex: 1;
+  background: url(${signUpBackgroundImage}) no-repeat center;
+  background-size: cover;
 `;
