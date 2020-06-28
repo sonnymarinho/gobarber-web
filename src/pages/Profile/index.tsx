@@ -7,21 +7,20 @@ import { Link, useHistory } from 'react-router-dom';
 
 import Input from '../../components/Input';
 import Button from '../../components/Button';
-import logoImg from '../../assets/logo.svg';
 
-import { Container, Content, Background, AnimationContainer } from './styles';
+import { Container, Content } from './styles';
 
 import getValidationErrors from '../../utils/getValidationErros';
 import api from '../../services/api.client';
 import { useToast } from '../../hooks/toast';
 
-interface SignUpFormData {
+interface ProfileFormData {
   name: string;
   email: string;
   password: string;
 }
 
-const SignUp: React.FC = () => {
+const Profile: React.FC = () => {
   const { addToast } = useToast();
   const history = useHistory();
   const formRef = useRef<FormHandles>(null);
@@ -29,7 +28,7 @@ const SignUp: React.FC = () => {
   // console.log(formRef);
 
   const handleSubmit = useCallback(
-    async (data: SignUpFormData) => {
+    async (data: ProfileFormData) => {
       try {
         formRef.current?.setErrors({});
 
@@ -77,34 +76,25 @@ const SignUp: React.FC = () => {
   return (
     <>
       <Container>
-        <Background />
         <Content>
-          <AnimationContainer>
-            <Form ref={formRef} onSubmit={handleSubmit}>
-              <img src={logoImg} alt="GoBarber" />
-              <h1>Faça Seu Cadastro</h1>
+          <Form ref={formRef} onSubmit={handleSubmit}>
+            <h1>Meu Perfil</h1>
 
-              <Input name="name" icon={FiUser} placeholder="Nome" />
-              <Input name="email" icon={FiMail} placeholder="E-mail" />
-              <Input
-                name="password"
-                icon={FiLock}
-                type="password"
-                placeholder="Password"
-              />
+            <Input name="name" icon={FiUser} placeholder="Nome" />
+            <Input name="email" icon={FiMail} placeholder="E-mail" />
+            <Input
+              name="password"
+              icon={FiLock}
+              type="password"
+              placeholder="Password"
+            />
 
-              <Button type="submit">Cadastrar</Button>
-            </Form>
-
-            <Link to="/">
-              <FiArrowLeft />
-              Voltar para Login
-            </Link>
-          </AnimationContainer>
+            <Button type="submit">Confirmar Mudanças</Button>
+          </Form>
         </Content>
       </Container>
     </>
   );
 };
 
-export default SignUp;
+export default Profile;
