@@ -1,4 +1,4 @@
-import React, { useCallback, useRef, FormEvent, ChangeEvent } from 'react';
+import React, { useCallback, useRef, ChangeEvent } from 'react';
 import { Form } from '@unform/web';
 import { FormHandles } from '@unform/core';
 import * as Yup from 'yup';
@@ -105,7 +105,7 @@ const Profile: React.FC = () => {
         });
       }
     },
-    [addToast, history],
+    [addToast, history, updateUser],
   );
 
   const handleAvatarChange = useCallback(

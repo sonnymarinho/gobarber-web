@@ -1,7 +1,5 @@
 import React, { ButtonHTMLAttributes } from 'react';
 
-import { FiLoader } from 'react-icons/fi';
-
 import { Container } from './styles';
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {

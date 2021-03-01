@@ -32,7 +32,7 @@ export const ToastProvider: React.FC = ({ children }) => {
 
       setMessages(oldMessages => [...oldMessages, toast]);
     },
-    [messages],
+    [],
   );
 
   const removeToast = useCallback((id: string) => {

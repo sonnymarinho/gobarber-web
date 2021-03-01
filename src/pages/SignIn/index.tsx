@@ -27,7 +27,7 @@ const SignIn: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
 
   const { signIn } = useAuth();
-  const { addToast, removeToast } = useToast();
+  const { addToast } = useToast();
   const history = useHistory();
 
   const handleSubmit = useCallback(

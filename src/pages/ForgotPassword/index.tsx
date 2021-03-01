@@ -1,13 +1,12 @@
 import React, { useRef, useCallback, useState } from 'react';
 import * as Yup from 'yup';
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-import { FiLogIn, FiMail, FiLock } from 'react-icons/fi';
+import { FiLogIn, FiMail } from 'react-icons/fi';
 import { Form } from '@unform/web';
 
 import { FormHandles } from '@unform/core';
 
-import { useAuth } from '../../hooks/auth';
 import { useToast } from '../../hooks/toast';
 
 import { Container, Content, Background, AnimationContainer } from './styles';

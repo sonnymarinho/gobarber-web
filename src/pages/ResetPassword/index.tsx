@@ -2,7 +2,7 @@ import React, { useRef, useCallback } from 'react';
 import * as Yup from 'yup';
 import { useHistory, useLocation } from 'react-router-dom';
 
-import { FiMail, FiLock } from 'react-icons/fi';
+import { FiLock } from 'react-icons/fi';
 import { Form } from '@unform/web';
 
 import { FormHandles } from '@unform/core';
